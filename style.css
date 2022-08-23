@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{ 
+    background-color:#2a2a72;
+    color:white;
+    font-family:'Roboto', sans-serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+    margin:0;
+}
+#Github{
+    width: 100%;
+    position: static;
+    top: -75px;
+    height: 150px;
+    width: 325px;
+    padding-bottom: 10px;
+}
+
+.user-form{
+    width:100%;
+
+    max-width:700px;
+}
+.user-form input{
+    width:100%;
+    background-color:#4c2885;
+    border:none;
+    border-radius:10px;
+    color:white;
+    padding:1rem;
+    margin-bottom:2rem;
+    font-family:inherit;
+    font-size:1rem;  
+}
+.user-form input::placeholder{
+    color:white;
+    text-align: center;
+}
+.user-form input:focus{
+  outline:none;    
+}
+
+.card{
+ max-width:100;
+ background-color:#4c2885;
+ border-radius:20px;
+ display:flex;   
+ margin:0 1.5rem;
+ padding:3rem; 
+}
+.avatar{
+    border-radius:50%;
+    border: 10px solid #2a2a72;
+    height:150px;
+    width:150px;
+}
+
+.user-info{
+    color:rgb(255, 255, 255);
+    margin-left:2rem;
+
+}
+
+user-info h2{
+    margin-top:0;
+}
+
+.user-info ul{
+    display:flex;
+    justify-content:space-between;
+    padding:0;
+    max-width:400px;
+}
+
+.user-info ul li{
+    display:flex;
+    align-items:flex-start;
+    padding-left: -inherit;
+}
+.user-info ul li{
+    font-size:1rem;
+    margin-left:0rem;
+}
+
+
+.repo{
+    text-decoration:none;
+    color:#fff;
+    background-color:#212a72;
+    font-size:1rem;
+    padding:0.25rem 0.3rem;
+    margin-right:0.5rem;
+    margin-bottom:0.5rem;   
+    display: flex;
+}
+
+@media(max-width:500px){
+    .card{
+        flex-direction:column;
+        align-items:center;
+    }
+    .user-form{
+
+        max-width:400px;
+    }
+}
