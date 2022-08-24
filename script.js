@@ -106,7 +106,7 @@ form.addEventListener('submit',(e)=>{
 async function tool(username,repos){
 
     const octokit = new Octokit({
-        auth: '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'
+        auth: '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'
       })
     const response= await octokit.request('GET /repos/{owner}/{repo}/stats/participation', {
         owner: username,
