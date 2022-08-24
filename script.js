@@ -87,10 +87,11 @@ function addReposToCard(username,repos)
     repos.forEach(repo=>{
         const repoEl=document.createElement('a')
         repoEl.classList.add('repo')
-        repoEl.href=tool(username,repo.name)
+        repo.name.onclick==tool(username,repo.name)
         repoEl.target='_self';
         repoEl.innerText=repo.name;
         reposEl.appendChild(repoEl)
+        
     })
 }
 
@@ -102,15 +103,46 @@ form.addEventListener('submit',(e)=>{
         search.value=''
     }
 })
-
+// const arr=[]
 async function tool(username,repos){
-
+    const arr=[]
     const octokit = new Octokit({
-        auth: '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'
+        auth: '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'
       })
     const response= await octokit.request('GET /repos/{owner}/{repo}/stats/participation', {
         owner: username,
         repo: repos
       })
-    console.log(response)
+
+    graph(response.data.all.slice(0,10))
+
+}
+async function graph(response){
+var xValues = ["1","2","3","4","5","6","7","8","9","10"];
+response.forEach(r=>{
+    console.log(r)
+//     var yValues = r;
+//     var barColors = ["red", "green","blue","orange","brown"];
+
+// new Chart("myChart", {
+//   type: "bar",
+//   data: {
+//     labels: xValues,
+//     datasets: [{
+//       backgroundColor: barColors,
+//       data: yValues
+//     }]
+//   },
+//   options: {
+//     legend: {display: false},
+//     title: {
+//       display: true,
+//       text: "World Wine Production 2018"
+//     }
+//   }
+// });
+}
+
+)
+
 }
